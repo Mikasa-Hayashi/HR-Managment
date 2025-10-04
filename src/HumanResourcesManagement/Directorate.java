@@ -27,18 +27,6 @@ public class Directorate implements EmployeeListener {
         return report.toString();
     }
 
-    /*
-    TODO {
-        _history.add("Employee " + employeeToString() + " was enrolled in department \"" + getCurrentDepartment().getName() + "\"");
-
-        _history.add("Employee " + employeeToString() + " was transferred from department \"" + getPrevDepartment().getName() + "\"  to department \"" + getCurrentDepartment().getName() + "\"");
-
-        _history.add("Employee " + employeeToString() + " was dismissed from department \"" + getPrevDepartment().getName() + "\"");
-
-        _history.add("Employee " + employeeToString() + " was received a new qualification \"" + getCurrentEducation() + "\"");
-     } TODO
-     */
-
     private String employeeToString(Employee e) {
         String log = e.getFIO();
         if(e.getIdCard() != null) {
@@ -48,34 +36,34 @@ public class Directorate implements EmployeeListener {
     }
 
     /**
-     * @param e
+     * @param e Employee event
      */
     @Override
     public void employeeEnrolled(EmployeeEvent e) {
-
+        _history.add("Employee " + employeeToString(e.getSource()) + " was enrolled in department \"" + e.getCurrentDepartment().getName() + "\"");
     }
 
     /**
-     * @param e
+     * @param e Employee event
      */
     @Override
     public void employeeTransferred(EmployeeEvent e) {
-
+        _history.add("Employee " + employeeToString(e.getSource()) + " was transferred from department \"" + e.getPrevDepartment().getName() + "\"  to department \"" + e.getCurrentDepartment().getName() + "\"");
     }
 
     /**
-     * @param e
+     * @param e Employee event
      */
     @Override
     public void employeeDismissed(EmployeeEvent e) {
-
+        _history.add("Employee " + employeeToString(e.getSource()) + " was dismissed from department \"" + e.getPrevDepartment().getName() + "\"");
     }
 
     /**
-     * @param e
+     * @param e Employee event
      */
     @Override
     public void employeeStudied(EmployeeEvent e) {
-
+        _history.add("Employee " + employeeToString(e.getSource()) + " was received a new qualification \"" + e.getCurrentEducation() + "\"");
     }
 }
