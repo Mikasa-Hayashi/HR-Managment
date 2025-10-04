@@ -5,9 +5,10 @@ import HumanResourcesManagement.Education;
 public class Employee {
     // -------------------------------------------------------------------------------------
     private String _FIO;
-    public String getFIO() {
-        return _FIO;
-    }
+    private final Education _education;
+    private IdCard _idCard;
+    private Computer _computer; // ???
+    private Department _department;
 
     public void setFIO(String FIO) {
         _FIO = FIO;
@@ -15,9 +16,7 @@ public class Employee {
 
     // -------------------------------------------------------------------------------------
     // TODO {
-    public Education getEducation() {
-        return null;
-    }
+
 
     public void completeNextDegreeOfStudy() {
         completeNextDegreeOfStudy(null);
@@ -28,14 +27,13 @@ public class Employee {
 
     public Employee(String FIO, Education education) {
         _FIO = FIO;
+        _education = education;
     }
     // } TODO
 
     // -------------------------------------------------------------------------------------
     // TODO {
-    public IdCard getIdCard() {
-        return null;
-    }
+
 
     private void chooseCardAsNeeded() {
     }
@@ -43,9 +41,7 @@ public class Employee {
 
     // -------------------------------------------------------------------------------------
     // TODO {
-    public Computer getComputer() {
-        return null;
-    }
+
 
     void setComputer(Computer comp) {
 
@@ -59,9 +55,7 @@ public class Employee {
 
     // -------------------------------------------------------------------------------------
     // TODO {
-    public Department getDepartment() {
-        return null;
-    }
+
 
     public boolean isWorks() {
         return false;
@@ -119,5 +113,29 @@ public class Employee {
     private void fireEmployeeStudied(Education prevEducation) {
     }
     // } TODO
+
+
+    // getters
+    public String getFIO() {
+        return _FIO;
+    }
+
+    // TODO
+    public Education getEducation() {
+        return _education;
+    }
+    public IdCard getIdCard() {
+        return _idCard;
+    }
+
+    // DON'T DO THAT
+    public Computer getComputer() {
+        return _computer;
+    } // No need
+
+    public Department getDepartment() {
+        return _department;
+    }
+
 }
 

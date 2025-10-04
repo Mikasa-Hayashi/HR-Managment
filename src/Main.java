@@ -14,19 +14,19 @@ public class Main {
         e.addEmployeeListener(dd);
 
         String s = e.getEducation().toString();
-
+        System.out.println(s);
         c.startUsingBy(e);
         c.startSession();
 
         String ss = c.makeReport();
-
+        System.out.println(ss);
         Department dep = new Department("Testing", 10);
         e.enrollIn(dep);
 
         e.completeNextDegreeOfStudy();
 
         String sss = dd.makeReport();
-
+        System.out.println(sss);
         int a = 1;
 
     }
