@@ -13,6 +13,7 @@ public class Department {
     }
 
     private final int _maxHeadcount;
+    private int _headcount;
     private static final Set<Department> _allDepartments = new HashSet<>();
 
     public Department(String name, int maxHeadcount) {
@@ -34,11 +35,15 @@ public class Department {
     // -------------------------------------------------------------------------------------
     // TODO {
     public int getHeadcount() {
-        return 0;
+        return _headcount;
     }
 
     boolean acceptEmployee(Employee employee) {
-        return false;
+        if (_headcount >= _maxHeadcount) {
+            return false;
+        }
+        _headcount++;
+        return true;
     }
 
     // При увольнении работник обязательно будет отпущен отделом
