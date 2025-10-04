@@ -24,12 +24,13 @@ public class Employee {
 
     public void completeNextDegreeOfStudy(Education.Speciality speciality) {
     }
+    // } TODO
 
     public Employee(String FIO, Education education) {
         _FIO = FIO;
         _education = education;
     }
-    // } TODO
+
 
     // -------------------------------------------------------------------------------------
     // TODO {
@@ -54,13 +55,11 @@ public class Employee {
     // } TODO
 
     // -------------------------------------------------------------------------------------
-    // TODO {
-
-
     public boolean isWorks() {
-        return false;
+        return getDepartment() != null;
     }
 
+    // TODO {
     public boolean enrollIn(Department department) { return false; }
 
     private boolean enrollIn(Department department, boolean isTransferring) {
